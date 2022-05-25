@@ -1,0 +1,51 @@
+<h1 *ngIf="con else don" style="color: hotpink;">If {{title}}</h1>
+<!-- <h1 *ngIf="con; then dis else don" style="color: hotpink;">If {{title}}</h1> -->
+<br/>
+
+
+
+<ng-template #don>
+    <h1>Else Condition</h1>
+    <h1>If Else Condition</h1>
+    <h2>Nothihng To Do</h2>
+</ng-template>
+
+<input type="text" style="color: orange;" [value]=title [disabled]=false/> 
+<!-- property Binding for boolean -->
+<br/><br/>
+<input type="text" #dis placeholder="Enter Name" name="username"/>
+<!-- interpoltion -->
+<h2 class="head">
+    {{display}}</h2>
+<button (click)="getInc()" class="inc">
+    <style>
+        .inc{
+            color: violet;
+        }
+    </style>
+
+    Increment</button>
+<button (click)="getDec()" class="dec">
+    <style>
+        .dec{
+            color: green;
+        }
+    </style>
+    Decrement</button>
+    
+<h1 class="{{getVal}}">{{getVal()+" "+num}}</h1>
+
+<button (click)="getName(300)">Click Here!</button>
+<br/><br/>
+<input type="text" #box1 placeholder="Please enter your name!" (keyup)="getName(box1.value)"/>
+<input type="text" #box2 placeholder="Blurr" (blur)="getName(box2.value)"/> 
+<!-- (keydown) (input) -->
+<h1 (mouseover)="getName('MouseOver!')">Mouse Over Print</h1>
+<!-- (mouseleave) -->
+<app-header></app-header>
+<app-loginauth></app-loginauth>
+<app-student-list></app-student-list>
+<app-inlinestyle></app-inlinestyle>
+<app-inlinetemplate></app-inlinetemplate>
+<app-inlinestypetemplate></app-inlinestypetemplate>
+
