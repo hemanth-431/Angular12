@@ -12,6 +12,7 @@ export class AppComponent {
   title = 'blog'
   color1='blue'
   color2='red'
+  togg=true
   userData:any={}
   users=['Anil','Sony','Sam','Hemanth']
   userDetails=[
@@ -49,6 +50,10 @@ export class AppComponent {
     
     console.log(this.userData.user)
     
+  }
+
+  toggle(){
+    this.togg=!this.togg;
   }
 
   num=10

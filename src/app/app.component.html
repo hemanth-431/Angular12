@@ -1,7 +1,11 @@
 <app-header></app-header>
-
+<app-login></app-login>
 <h1 *ngIf="con else don" style="color: hotpink; text-align: center;">If {{title}}</h1>
 <!-- <h1 *ngIf="con; then dis else don" style="color: hotpink;">If {{title}}</h1> -->
+
+<button style="margin-left: 10px;" (click)="toggle()">Toggle here</button>
+<h3 style="margin-left: 25px;" *ngIf="togg">Pass</h3>
+
 
 <form #myTemplateVar="ngForm" (submit)="getData(myTemplateVar.value)">
     <input type="text" ngModel name="user" placeholder="Enter user name" style="margin-bottom: 10px; margin-left: 10px;"/>
