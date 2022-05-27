@@ -1,13 +1,52 @@
-<h1 *ngIf="con else don" style="color: hotpink;">If {{title}}</h1>
+<app-header></app-header>
+
+<h1 *ngIf="con else don" style="color: hotpink; text-align: center;">If {{title}}</h1>
 <!-- <h1 *ngIf="con; then dis else don" style="color: hotpink;">If {{title}}</h1> -->
-<br/>
 
+<form #myTemplateVar="ngForm" (submit)="getData(myTemplateVar.value)">
+    <input type="text" ngModel name="user" placeholder="Enter user name" style="margin-bottom: 10px; margin-left: 10px;"/>
+    <br/>
+    <input type="text" ngModel name="email" placeholder="Enter user email" style="margin-bottom: 10px; margin-left: 10px;"/>
+    <br/>
+    <input type="text" ngModel name="password" placeholder="Enter user password" style="margin-bottom: 10px; margin-left: 10px;"/>
+    <br/>
+    <Button style="margin-bottom: 10px; margin-left: 50px;">
+        Register
+    </Button>
+</form>
 
+<ul>
+<li>{{userData.user}}</li>
+<li>{{userData.email}}</li>
+<li>{{userData.password}}</li>
+</ul>
+
+<h1 #butc [style.color]="color1" [style.backgroundColor]="color2" [style.text-align]='"center"'>Change Color</h1>
+<button (click)="butc.style.color='pink' ">Update</button>
+
+<!-- SwitcgCase -->
+<div [ngSwitch]="con">
+    <h1 *ngSwitchCase="'red'" style="color: red; font-style: italic;"> RED </h1>
+    <h1 *ngSwitchCase="'blue'" style="color: rgb(31, 19, 141); font-style: italic;"> BLUE </h1>
+    <h1 *ngSwitchDefault >UnKnown Color</h1>
+</div>
+
+<div #for431 *ngFor="let item of userDetails" style="color: rgb(20, 139, 104); text-align: center;">
+    <li>{{item.name}} {{item.No}}</li>
+    <ul *ngFor="let a of item.accounts">
+        <p style="color: rgb(136, 10, 153);">{{a}}</p>
+    </ul>
+</div>
+
+<div *ngFor="let item of users">
+<h1>{{item}}</h1>
+<!-- <div #for431 *ngFor="let item of userDetails" style="color: rgb(20, 139, 104); text-align: center;">
+    <h3>{{item.name}} {{item.No}}</h3>
+</div> -->
+</div>
 
 <ng-template #don>
-    <h1>Else Condition</h1>
-    <h1>If Else Condition</h1>
-    <h2>Nothihng To Do</h2>
+    <h1 style="color: hotpink;">Else Condition</h1>
 </ng-template>
 
 <input type="text" style="color: orange;" [value]=title [disabled]=false/> 
@@ -42,7 +81,7 @@
 <!-- (keydown) (input) -->
 <h1 (mouseover)="getName('MouseOver!')">Mouse Over Print</h1>
 <!-- (mouseleave) -->
-<app-header></app-header>
+
 <app-loginauth></app-loginauth>
 <app-student-list></app-student-list>
 <app-inlinestyle></app-inlinestyle>

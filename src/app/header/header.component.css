@@ -1,5 +1,23 @@
-.red{
-    color: red;
-    text-align: center;
-    font-style: italic;
+nav img{
+   padding: 10px;
+    width: 80px;
+    height:80px;
+
+}
+nav ul{
+    margin-right: 15px;
+    margin-top: 15px;
+    float: right;
+    list-style-type: none;
+}
+ul li{
+    display: inline-block;
+    padding: 10px;
+
+}
+li a{
+    
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
 }

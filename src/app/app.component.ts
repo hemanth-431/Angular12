@@ -1,5 +1,6 @@
 import { style } from '@angular/animations';
 import { Component } from '@angular/core';
+import {NgForm} from '@angular/forms'
 
 @Component({
   selector: 'app-root',
@@ -7,9 +8,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  con=false
+  con='blue'
   title = 'blog'
+  color1='blue'
+  color2='red'
+  userData:any={}
+  users=['Anil','Sony','Sam','Hemanth']
+  userDetails=[
+    {name:'Hemanth',No:'30431',accounts:['facebook','linkdin','insta','twitter','telegram']},
+    {name:'Varun',No:'30432',accounts:['facebook','Yahoo','Gmail','youTube']},
+    {name:'Babblu',No:'30433',accounts:['linkdin','Insta','WhatsUp']}
+  ]
   display:number=0
+  changeColor(){
+    this.color1='blue'
+  }
   getVal(){
      return "Hemanth!"   
   }
@@ -30,6 +43,14 @@ export class AppComponent {
   getDis(a:number){
     this.display=a
   }
+
+  getData(b:NgForm){
+    this.userData=b
+    
+    console.log(this.userData.user)
+    
+  }
+
   num=10
 }
 
